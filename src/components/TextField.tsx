@@ -13,6 +13,7 @@ interface Props {
   isValid: boolean;
   fn: (bob: string) => string;
   person: Person;
+  handleChange: (value: string) => void;
 }
 
 const TextField = (props: Props) => {
@@ -26,7 +27,10 @@ const TextField = (props: Props) => {
     <div ref={divRef}>
       <input type='text' onChange={(e) => setCount(e.target.value)} />
       <p>{count}</p>
-      <input ref={inputRef} />
+      <input
+        ref={inputRef}
+        onChange={(e) => props.handleChange(e.target.value)}
+      />
     </div>
   );
 };

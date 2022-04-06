@@ -26,7 +26,13 @@ const testReducer = (state: State, action: Action) => {
 const UseReducer = () => {
   const [state, dispatch] = useReducer(testReducer, []);
 
-  return <div>UseReducer</div>;
+  return (
+    <>
+      <button onClick={() => dispatch({ type: 'add', payload: 'Content' })}>
+        Click Me: Dispatch your Action to Reducer
+      </button>
+    </>
+  );
 };
 
 export default UseReducer;

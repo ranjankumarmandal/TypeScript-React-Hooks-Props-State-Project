@@ -9,7 +9,14 @@ import Counter_renderProps from './components/Counter_renderProps';
 const App = () => {
   return (
     <div className='App'>
-      <p>hello</p>
+      <Counter_renderProps>
+        {(count, setCount) => (
+          <div>
+            {count}
+            <button onClick={() => setCount(count + 1)}>+</button>
+          </div>
+        )}
+      </Counter_renderProps>
     </div>
   );
 };

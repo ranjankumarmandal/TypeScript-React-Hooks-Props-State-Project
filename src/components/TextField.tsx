@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 interface Person {
   firstName: string;
@@ -16,9 +16,13 @@ interface Props {
 }
 
 const TextField = (props: Props) => {
+  const [count, setCount] = useState(''); // type inference automatically - this typing is best for state declaration in react
+  const [num, setNum] = useState<number | undefined | null>(0);
+
   return (
     <>
-      <input />
+      <input type='text' onChange={(e) => setCount(e.target.value)} />
+      <p>{count}</p>
     </>
   );
 };
